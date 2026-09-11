@@ -1,0 +1,9 @@
+[package]
+name = "gost"
+version = "1.0.0"
+entrypoint = "lib.typ"
+author = "sheka"
+
+[template]
+path = "src"
+entrypoint = "document.typ"
