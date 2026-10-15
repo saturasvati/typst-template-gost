@@ -1,3 +1,5 @@
+#import "title.typ": *
+
 #let gost-style(
   doc,
   font-size: 14pt,
@@ -69,6 +71,19 @@
     }
   }
 
+  // Вложения в целом
+
+  show figure: set block(breakable: true)
+
+  // ЛИСТИНГ
+
+  show figure.where(kind: raw): set figure.caption(position: top, separator: " — ")
+  show figure.caption.where(kind: raw): set align(left)
+  show figure.where(kind: raw): it => {
+    it.caption
+    it.body
+  }
+
   // ТАБЛИЦЫ
 
   show figure.where(kind: table): set figure.caption(position: top, separator: " — ")
@@ -113,6 +128,21 @@
     indent: 12.5mm,
     numbering: "1)",
   )
+
+  doc
+}
+
+#let gost-presentation(
+  doc,
+  font-size: 7.5mm,
+) = {
+  set page(paper: "presentation-4-3", numbering: "1", margin: 10mm)
+  set text(size: font-size)
+  set align(center + horizon)
+
+  show heading: it => place(top + center, float: true, scope: "parent")[#it]
+
+  set enum(numbering: "1)")
 
   doc
 }
