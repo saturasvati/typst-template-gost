@@ -1,0 +1,13 @@
+{
+    "Figure Image": {
+        "prefix": "figimg",
+        "body": [
+            "#figure(",
+            "  ${1:image(\"assets/\")},",
+            "  caption: [${2:caption}],",
+            ") <fig.${3:alias}>",
+            "$0"
+        ],
+        "description": "Figured image"
+    }
+}
